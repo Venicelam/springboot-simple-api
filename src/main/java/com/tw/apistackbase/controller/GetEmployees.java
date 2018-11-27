@@ -13,7 +13,7 @@ public class GetEmployees {
     EmployeeService employeeService;
 
     @Autowired
-    public GetEmployees(EmployeeService employees) {
+    public GetEmployees(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -27,13 +27,17 @@ public class GetEmployees {
     }
 
     @PostMapping(produces = {"application/json"})
-    public List<Employee> create(@RequestBody Employee employee) {
+    public void create(@RequestBody Employee employee) {
 
-        EmployeeService employeeService = new EmployeeService();
-        List<Employee> employees = employeeService.create(employee);
-        return employees;
+        employeeService.create(employee);
 
     }
+    @PutMapping(produces = {"application/json"})
+    public void modifyEmployee(@RequestBody Employee employee) {
+
+        employeeService.modifyEmployee(employee);
+    }
+
 }
 
 
