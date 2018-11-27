@@ -37,6 +37,10 @@ public class GetEmployees {
 
         employeeService.modifyEmployee(employee);
     }
+    @DeleteMapping(produces = {"application/json"})
+    public void removeEmployee(@RequestBody Employee employee) {
+        employeeService.removeEmployee(employee);
+    }
 
 }
 

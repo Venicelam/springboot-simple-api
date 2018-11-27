@@ -43,4 +43,7 @@ public class EmployeeService {
         }
 
     }
+    public void removeEmployee(Employee employee) {
+        employees.remove(employee.getId());
+    }
 }
