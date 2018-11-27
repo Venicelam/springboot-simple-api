@@ -1,10 +1,13 @@
 package com.tw.apistackbase.controller;
 
 
+import org.springframework.stereotype.Service;
+import com.tw.apistackbase.Employee;
 
 import java.util.List;
 import java.util.ArrayList;
 
+@Service
 public class EmployeeService {
 
     private List<Employee> employees;
@@ -18,9 +21,9 @@ public class EmployeeService {
         return this.employees;
     }
 
-    //public List<Employee> create(Employee employee) {
-       // employees.add(employee);
-       // return this.employees;
-    //}
+    public List<Employee> create(Employee employee) {
+        employees.add(employee);
+        return this.employees;
+    }
 }
 
